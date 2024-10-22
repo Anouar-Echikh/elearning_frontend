@@ -1,0 +1,27 @@
+.itemFlex{
+    display:block !important;
+}
+
+.containerSx{
+    
+    width:1232px;
+       
+}
+@media only screen and (max-width: 1200px) {
+    .containerSx{
+        width:1140px 
+        }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .containerSx{
+        width:960 
+        }
+  }
+  @media only screen and (max-width: 576px) {
+    .containerSx{
+        width:540px
+        }
+  }
+  
+ 
