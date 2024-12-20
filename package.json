@@ -2,8 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5032",
-  "secure": false,
+   "secure": false,
   "//": "",
   "description": "E-Learning-academy - FrontEnd",
   "dependencies": {

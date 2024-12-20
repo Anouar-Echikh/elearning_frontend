@@ -1,21 +1,22 @@
 import axios from "axios";
 import store from "../redux/store"
 const TOKEN_NAME = "ela-app-token";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 
 //Create notification
 export const apiSaveNotification = notification => {
-  return axios.post("/createNotification", notification);
+  return axios.post(`${apiUrl}/createNotification`, notification);
 };
 
 //get all notification
 export const apiGetAllNotifications = () => {
-  const url = "/getAllNotifications";
+  const url = `${apiUrl}/getAllNotifications`;
   return axios.get(url);
 };
 //get all notification sorted bey dateTime and limited
 export const apiGetAllNotificationsSortedByDateTimeAndLimited = () => {
-  const url = "/getAllNotificationsSortedByDateTimeAndLimited";
+  const url = `${apiUrl}/getAllNotificationsSortedByDateTimeAndLimited`;
   return axios.get(url);
 };
 
@@ -56,7 +57,7 @@ export const apiNotificationsStopAppReminder = (data) => {
 
 //Send notification by email 
 export const apiSendNotificationByEmail = email => {
-  return axios.post("/sendNotificationByEmail", email);
+  return axios.post(`${apiUrl}/sendNotificationByEmail`, email);
 };
 
 export const apiNotificationsStopReminder = (data) => {

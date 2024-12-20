@@ -1,29 +1,30 @@
 import axios from "axios";
 import store from "../redux/store"
 const TOKEN_NAME = "ela-app-token";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 //Create about
 export const apiSaveVideo = video => {
-  return axios.post("/videos/create", video);
+  return axios.post(`${apiUrl}/videos/create`, video);
 };
 
 
 
 //Get one New by idVideo
 export const apiGetOneVideoById =(idVideo) => {
-  const url = `/videos/getOne/${idVideo}`;
+  const url = `${apiUrl}/videos/getOne/${idVideo}`;
    return axios.get(url);
 };
 
 //Get all Video 
 export const apiGetAllVideosByTheme =(idTheme) => {
-  const url = `/videos/getAllByTheme/${idTheme}`;
+  const url = `${apiUrl}/videos/getAllByTheme/${idTheme}`;
    return axios.get(url);
 };
 
 //Get all Video 
 export const apiGetAllVideosByProf =(idProf) => {
-  const url = `/videos/getAllByProf/${idProf}`;
+  const url = `${apiUrl}/videos/getAllByProf/${idProf}`;
    return axios.get(url);
 };
 
@@ -31,25 +32,25 @@ export const apiGetAllVideosByProf =(idProf) => {
 //Update Video
 //Patch Video
 export const apiPatchVideo = (id, video) => {
-  const prefix = `/videos/patch/${id}`;
+  const prefix = `${apiUrl}/videos/patch/${id}`;
   return axios.patch(prefix, video);
 };
 
 //Delete Video by id
 export const apiDeleteVideoById =(id) => {
-  const url = `/videos/deleteOne/${id}`;
+  const url = `${apiUrl}/videos/deleteOne/${id}`;
   return axios.delete(url);
 };
 
 //Delete Video by id
 export const apiDeleteManyVideoById =(idTheme) => {
-  const url = `/videos/deleteMany/${idTheme}`;
+  const url = `${apiUrl}/videos/deleteMany/${idTheme}`;
   return axios.delete(url);
 };
 
 //Delete Video by id
 export const apiDownloadFileFromServer =(id) => {
-  const url = `/videos/deleteOne/${id}`;
+  const url = `${apiUrl}/videos/deleteOne/${id}`;
   return axios.delete(url);
 };
 
