@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build:
+      context: .
+    container_name: frontend
+    ports:
+      - "3012:3012"
+    environment:
+      - PORT=5032
+      - REACT_APP_API_URL=http://localhost:5032
+    volumes:
+      - app:/app
+    
+    restart: always
+
+# Define named volumes
+volumes:
+  app:  # Declare the app volume here
+    driver: local  # You can specify the driver, but the default is "local"
+
