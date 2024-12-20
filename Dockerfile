@@ -10,5 +10,4 @@ COPY . .
 
 EXPOSE 3012
 
-
-CMD [ "npm","start" ]
+RUN npm run build
