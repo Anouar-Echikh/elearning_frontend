@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3012
 
-RUN npm run build
+RUN npm start
