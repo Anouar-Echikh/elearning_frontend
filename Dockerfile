@@ -1,6 +1,6 @@
 FROM node:14.21.3-alpine as base
 
-WORKDIR usr/src/app
+WORKDIR /usr/src/app
 
 COPY package*.json .
 
@@ -15,10 +15,8 @@ RUN npm run build
 
 FROM base as final
 
-WORKDIR /app
-
-COPY --from=base /usr/src/app/build ./ 
+COPY --from=base /usr/src/app/build ./build 
 
 EXPOSE 3012
 
-CMD [ "serve","-s",".","-l","3012" ]
+CMD [ "serve","-s","./build","-l","3012" ]
