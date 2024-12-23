@@ -1,6 +1,6 @@
-FROM node:14.21.3-alpine
+FROM node:14.21.3-alpine as base
 
-WORKDIR /app
+WORKDIR usr/src/app
 
 COPY package*.json .
 
@@ -8,6 +8,17 @@ RUN npm install
 
 COPY . .
 
+RUN npm i -g serve
+
+RUN npm run build
+
+
+FROM base as final
+
+WORKDIR /app
+
+COPY --from=base /usr/src/app/build ./
+
 EXPOSE 3012
 
-RUN npm start
+CMD [ "serve","-s",".","-l","3012" ]
