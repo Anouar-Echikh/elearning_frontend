@@ -13,7 +13,7 @@ services:
       - REACT_APP_API_URL=http://localhost:5032
     volumes:
       - app:/app
-      - ./frontend/build:/var/www/vhosts/elearning/elearning_frontend/build
+     
     
     restart: always
 
