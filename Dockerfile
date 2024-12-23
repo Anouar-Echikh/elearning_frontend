@@ -17,8 +17,8 @@ FROM base as final
 
 WORKDIR /app
 
-COPY --from=base /usr/src/app/build ./
+COPY --from=base /usr/src/app/build ./ 
 
 EXPOSE 3012
 
-CMD [ "serve","-s",".","-l","3012" ]
+CMD [ "serve","-s","." ]
