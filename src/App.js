@@ -6,7 +6,7 @@ import ProtectedRoute from "./pages/protectedRoutes/protectedRoute";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
-//import "./App.css";
+//import "./App.css"   ;
 
 const loading = () => (
   <div className="animated fadeIn pt-3 text-center">

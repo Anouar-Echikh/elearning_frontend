@@ -5,6 +5,7 @@ services:
   frontend:
     build:
       context: .
+    image: appmern/frontend:latest  
     container_name: frontend
     ports:
       - "3012:3012"
